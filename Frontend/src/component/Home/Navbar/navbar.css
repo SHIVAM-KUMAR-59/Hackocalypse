@@ -44,7 +44,7 @@
   position: absolute;
   top: 50px;
   right: 10px;
-  background-color: white;
+  background-color: #686767;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -61,8 +61,12 @@
   text-align: left;
   width: 100%;
   cursor: pointer;
+  border-radius: 7px;
+  font-weight: 500;
+  color: white;
 }
 
 .dropdown-menu button:hover {
   background-color: #f0f0f0;
+  color: #1a1717;
 }
