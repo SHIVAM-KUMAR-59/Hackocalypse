@@ -34,6 +34,15 @@ const Login = () => {
         const responseData = await response.json()
         console.log('Response from server:', responseData)
 
+        // Store username and other data in localStorage
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            username: data.username,
+            email: data.email,
+          }),
+        )
+
         // Redirect to the home page upon successful login
         navigate('/') // Navigate to the home page
       } else {
@@ -58,6 +67,23 @@ const Login = () => {
       actionLinkText="Register"
     >
       <form onSubmit={handleSubmit(onSubmit)}>
+        {/* Added Username Field */}
+        <InputField
+          label="Username"
+          type="text"
+          placeholder="Enter your username"
+          id="username"
+          register={register}
+          validation={{
+            required: 'Username is required',
+            minLength: {
+              value: 3,
+              message: 'Username must be at least 3 characters',
+            },
+          }}
+          errorMessage={errors.username?.message}
+        />
+
         <InputField
           label="Email"
           type="email"

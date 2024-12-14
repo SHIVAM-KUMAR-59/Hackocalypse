@@ -34,6 +34,15 @@ const Register = () => {
         const responseData = await response.json()
         console.log('Response from server:', responseData)
 
+        // Store username and other data in localStorage
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            username: data.username,
+            email: data.email,
+          }),
+        )
+
         // Redirect to the home page upon successful registration
         navigate('/') // Navigate to the home page
       } else {
