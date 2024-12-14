@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
+import authRoutes from './routes/authRoutes.js'
 
 dotenv.config()
 
@@ -16,7 +17,12 @@ app.use(express.json())
 // Connect to MongoDB
 ;(async () => {
   try {
-    await mongoose.connect(MONGODB_URI)
+    await mongoose.connect(MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      tls: true,
+    })
+
     console.log('Successfully Connected to Database')
   } catch (error) {
     console.error('Error Connecting to Database:', error)
@@ -25,6 +31,8 @@ app.use(express.json())
 })()
 
 // Routes
+app.use(authRoutes)
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })

@@ -1,7 +1,8 @@
 import jwt from 'jsonwebtoken'
-import User from '../../models/User'
+import User from '../../models/User.js'
+import bcrypt from 'bcrypt'
 
-const loginUser = async (req, res) => {
+const registerUser = async (req, res) => {
   const { username, email, password } = req.body
 
   if (!email || !password || !username) {
@@ -47,8 +48,10 @@ const loginUser = async (req, res) => {
       .json({ message: 'User created successfully', data: user, token: token })
   } catch (error) {
     console.error(error)
-    return res.status(500).json({ message: 'Internal server error' })
+    return res
+      .status(500)
+      .json({ message: 'Internal server error', error: error })
   }
 }
 
-export default loginUser
+export default registerUser
