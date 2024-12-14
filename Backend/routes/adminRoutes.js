@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import createAnnouncement from '../controllers/announcement/createAnnouncement'
-import { isAdmin } from '../middleware/auth'
-import updateAnnouncement from '../controllers/announcement/updateAnnouncement'
-import deleteAnnouncement from '../controllers/announcement/deleteAnnouncement'
+import createAnnouncement from '../controllers/announcement/createAnnouncement.js'
+import { isAdmin } from '../middleware/auth.js'
+import updateAnnouncement from '../controllers/announcement/updateAnnouncement.js'
+import deleteAnnouncement from '../controllers/announcement/deleteAnnouncement.js'
 
 const router = Router()
 
