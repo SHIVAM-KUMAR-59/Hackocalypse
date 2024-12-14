@@ -69,3 +69,22 @@ ul {
   background: linear-gradient(to right, #686767, #383737);
   border-radius: 10px;
 }
+
+.card3-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card3-content {
+  background-color: #444;
+  width: 30%;
+  height: 90%;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.no-products {
+  width: 100%;
+  text-align: center;
+}

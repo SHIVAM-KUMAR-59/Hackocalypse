@@ -10,7 +10,8 @@ const Card2 = () => {
         const response = await fetch('http://localhost:3000/api/article/all')
 
         if (!response.ok) {
-          setArticles('No Articles Available')
+          setArticles(['No Articles Available'])
+          return
         }
 
         const data = await response.json()
@@ -20,7 +21,10 @@ const Card2 = () => {
           (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt),
         )
 
-        setArticles(sortedArticles)
+        // Slice the sorted articles to only get the top 3
+        const top3Articles = sortedArticles.slice(0, 3)
+
+        setArticles(top3Articles)
       } catch (error) {
         console.error('Error fetching articles:', error)
         alert('Error fetching articles. Please try again later.')
