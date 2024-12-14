@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import authRoutes from './routes/authRoutes.js'
 import productRoutes from './routes/productRoutes.js'
+import articleRoutes from './routes/articleRoutes.js'
 
 dotenv.config()
 
@@ -35,6 +36,7 @@ app.use(express.json())
 // Routes
 app.use(authRoutes)
 app.use(productRoutes)
+app.use(articleRoutes)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
