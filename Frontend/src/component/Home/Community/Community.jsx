@@ -68,14 +68,18 @@ const Community = () => {
           rows={10}
           cols={30}
         />
-        <input
-          type="text"
-          placeholder="Type your message here.."
-          value={message} // Bind input field value to state
-          onChange={handleInputChange} // Update the state on input change
-          onKeyDown={handleKeyPress} // Send message on Enter key press
-        />
-        <button onClick={sendMessage}>Send</button>
+        <div className="community-input">
+          <input
+            type="text"
+            placeholder="Type your message here.."
+            value={message} // Bind input field value to state
+            onChange={handleInputChange} // Update the state on input change
+            onKeyDown={handleKeyPress} // Send message on Enter key press
+          />
+          <button onClick={sendMessage} className="community-button">
+            Send
+          </button>
+        </div>
       </div>
     </>
   )
