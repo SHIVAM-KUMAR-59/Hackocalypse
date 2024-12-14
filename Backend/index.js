@@ -25,8 +25,9 @@ const MONGODB_URI = process.env.MONGODB_URI
 // CORS configuration for Express
 const corsOptions = {
   origin: 'http://localhost:5173', // Allow requests from this origin
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }
 
 app.use(cors(corsOptions)) // Apply the CORS configuration

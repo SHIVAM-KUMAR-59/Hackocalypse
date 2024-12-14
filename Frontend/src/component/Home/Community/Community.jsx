@@ -59,7 +59,7 @@ const Community = () => {
 
   return (
     <>
-      <div className="community-chat">
+      <div className="community-chat" id="chat">
         <h2>COMMUNITY CHAT</h2>
         {/* Display messages in the textarea */}
         <textarea

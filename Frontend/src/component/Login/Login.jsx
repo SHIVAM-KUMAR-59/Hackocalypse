@@ -40,6 +40,7 @@ const Login = () => {
           JSON.stringify({
             username: data.username,
             email: data.email,
+            token: responseData.token,
           }),
         )
 

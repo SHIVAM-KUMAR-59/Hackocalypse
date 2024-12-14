@@ -31,7 +31,7 @@ const Card3 = () => {
   }, []) // Empty dependency array means this effect runs only once on mount
 
   return (
-    <div className="resource-two" id="card3">
+    <div className="resource-two" id="trade">
       <h2>Got Something You Need?</h2>
       <div className="card3-container">
         {/* Map through the top 3 sorted products and create a card for each product */}
