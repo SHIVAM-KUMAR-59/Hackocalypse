@@ -7,7 +7,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
 
 .resource-card {
@@ -15,13 +15,51 @@
   background-color: #444;
   padding: 1rem;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 #card1 {
   background: linear-gradient(to left, #686767, #383737);
 }
+
+#card1 h2 {
+  text-align: center;
+}
+
+#card1,
+#card2 b,
+ul {
+  text-align: left;
+}
+
 #card2 {
   background: linear-gradient(to right, #454545, #2f2f2f);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#card2 p {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article-link h3 {
+  margin: 0;
+  color: white;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.article-link h3:hover {
+  color: #f2f2f2;
+}
+
+.article-description {
+  margin: 0;
 }
 
 .resource-two {
