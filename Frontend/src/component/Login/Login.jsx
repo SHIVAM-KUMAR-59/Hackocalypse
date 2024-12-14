@@ -34,6 +34,9 @@ const Login = () => {
         const responseData = await response.json()
         console.log('Response from server:', responseData)
 
+        console.log('responseData', responseData)
+        console.log('data', data)
+
         // Store username and other data in localStorage
         localStorage.setItem(
           'user',
@@ -41,6 +44,7 @@ const Login = () => {
             username: data.username,
             email: data.email,
             token: responseData.token,
+            role: responseData.data.role,
           }),
         )
 

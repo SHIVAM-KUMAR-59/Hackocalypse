@@ -56,6 +56,10 @@ const Navbar = () => {
             <Button text="Chat" targetId="chat" />
             <Button text="Articles" targetId="articles" />
             <Button text="Trade" targetId="trade" />
+            {/* Show Announcements button if user role is admin */}
+            {user?.role === 'admin' && (
+              <Button text="Announcements" targetId="announcements" />
+            )}
             <button
               className="nav-button"
               onClick={() => setDropdownVisible(!dropdownVisible)}
