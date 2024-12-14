@@ -16,11 +16,12 @@ const auth = async (req, res, next) => {
 }
 
 // Middleware for role checking
-const roleCheck = (roles) => (req, res, next) => {
-  if (!roles.includes(req.user.role)) {
-    return res.status(403).json({ message: 'Access denied' })
+const isAdmin = (req, res, next) => {
+  const { user } = req // Assuming `user` is set in req by authentication middleware
+  if (user?.role !== 'admin') {
+    return res.status(403).json({ error: 'Access denied. Admins only.' })
   }
   next()
 }
 
-export { auth, roleCheck }
+export { auth, isAdmin }
