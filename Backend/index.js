@@ -3,6 +3,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import authRoutes from './routes/authRoutes.js'
+import productRoutes from './routes/productRoutes.js'
 
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.use(express.json())
       useNewUrlParser: true,
       useUnifiedTopology: true,
       tls: true,
+      ssl: true,
     })
 
     console.log('Successfully Connected to Database')
@@ -32,6 +34,7 @@ app.use(express.json())
 
 // Routes
 app.use(authRoutes)
+app.use(productRoutes)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

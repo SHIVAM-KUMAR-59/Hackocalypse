@@ -6,6 +6,7 @@ const Product = new mongoose.Schema({
   owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   condition: { type: String, enum: ['New', 'Used'], required: true },
   category: { type: String, required: true },
+  quantity: { type: Number, default: 1 },
   createdAt: { type: Date, default: Date.now },
 })
 
