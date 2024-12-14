@@ -76,6 +76,11 @@ ul {
   align-items: center;
 }
 
+.trade-link {
+  text-decoration: underline;
+  color: white;
+}
+
 .card3-content {
   background-color: #444;
   width: 30%;

@@ -34,7 +34,7 @@ const Card2 = () => {
   }, [])
 
   return (
-    <div className="resource-card" id="card2">
+    <div className="resource-card" id="articles">
       <h2>Read To Survive..</h2>
       <b>Here are the essential articles you need to survive!:</b>
 

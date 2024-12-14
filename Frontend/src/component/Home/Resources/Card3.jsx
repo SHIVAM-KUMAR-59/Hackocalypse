@@ -32,7 +32,11 @@ const Card3 = () => {
 
   return (
     <div className="resource-two" id="trade">
-      <h2>Got Something You Need?</h2>
+      <h2>
+        <a href="/trade-hub" className="trade-link">
+          Got Something You Need? Keep Looking..
+        </a>
+      </h2>
       <div className="card3-container">
         {/* Map through the top 3 sorted products and create a card for each product */}
         {products.length > 0 ? (
