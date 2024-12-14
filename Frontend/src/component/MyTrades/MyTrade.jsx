@@ -6,7 +6,6 @@ const MyTrade = () => {
   return (
     <>
       <Navbar />
-
       <div className="mytrade-title">MyTrade</div>
     </>
   )
