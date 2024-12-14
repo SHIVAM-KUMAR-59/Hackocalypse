@@ -56,7 +56,6 @@ const Navbar = () => {
             <Button text="Chat" targetId="chat" />
             <Button text="Articles" targetId="articles" />
             <Button text="Trade" targetId="trade" />
-            <Button text="Contact" />
             <button
               className="nav-button"
               onClick={() => setDropdownVisible(!dropdownVisible)}

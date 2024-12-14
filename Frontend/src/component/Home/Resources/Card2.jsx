@@ -27,7 +27,6 @@ const Card2 = () => {
         setArticles(top3Articles)
       } catch (error) {
         console.error('Error fetching articles:', error)
-        alert('Error fetching articles. Please try again later.')
       }
     }
 
