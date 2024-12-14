@@ -4,7 +4,7 @@ import './resources.css'
 const Card1 = () => {
   return (
     <div className="resource-card " id="card1">
-      <h2>Important Resources</h2>
+      <h2>Help! Help! Help!</h2>
       <b>
         Here are five essential helpline numbers to contact during emergencies
         in India:

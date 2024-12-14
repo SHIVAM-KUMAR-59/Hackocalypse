@@ -36,7 +36,7 @@ const Card2 = () => {
 
   return (
     <div className="resource-card" id="card2">
-      <h2>Important Resources</h2>
+      <h2>Read To Survive..</h2>
       <b>Here are the essential articles you need to survive!:</b>
 
       {Array.isArray(articles) && articles.length > 0 ? (

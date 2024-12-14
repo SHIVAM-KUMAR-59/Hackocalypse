@@ -32,7 +32,7 @@ const Card3 = () => {
 
   return (
     <div className="resource-two" id="card3">
-      <h2>Important Resources</h2>
+      <h2>Got Something You Need?</h2>
       <div className="card3-container">
         {/* Map through the top 3 sorted products and create a card for each product */}
         {products.length > 0 ? (
