@@ -1,0 +1,20 @@
+.admin-announcement {
+  margin: 2rem 0;
+  padding: 3rem;
+  background: linear-gradient(to right, #686767, #383737);
+  border-radius: 8px;
+}
+
+.admin-announcement h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff5d73;
+}
+
+.admin-announcement p {
+  margin: 15px 5px 5px 15px;
+  font-size: 20px;
+  color: #1d183c;
+  font-weight: 700;
+}

@@ -1,0 +1,33 @@
+.resources-section {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.resources-one {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resource-card {
+  width: 47%;
+  background-color: #444;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#card1 {
+  background: linear-gradient(to left, #686767, #383737);
+}
+#card2 {
+  background: linear-gradient(to right, #454545, #2f2f2f);
+}
+
+.resource-two {
+  background-color: #444;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(to right, #686767, #383737);
+  border-radius: 10px;
+}

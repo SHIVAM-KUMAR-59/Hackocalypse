@@ -1,0 +1,23 @@
+.main-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+  width: 85%;
+  margin: auto;
+  background: linear-gradient(to left, #444242, #292929);
+  height: 100%;
+  margin: 5rem auto;
+  background: linear-gradient(to left, #444242, #292929);
+  border-radius: 10px;
+}
+
+.main-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.main-content p {
+  font-family: 'Exo', sans-serif;
+}
