@@ -1,12 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom' // Import useNavigate from react-router-dom
-import InputField from './InputField.jsx'
-import FormContainer from './FormContainer.jsx'
-import SubmitButton from './SubmitButton.jsx'
+import InputField from './InputField'
+import FormContainer from './FormContainer'
+import SubmitButton from './SubmitButton'
 import './login.css'
 
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -15,14 +15,14 @@ const Login = () => {
     reset,
   } = useForm()
 
-  const password = watch('password')
   const navigate = useNavigate() // Initialize the navigate function
+  const password = watch('password')
 
   const onSubmit = async (data) => {
     console.log('Form Data:', data)
 
     try {
-      const response = await fetch('http://localhost:3000/api/login', {
+      const response = await fetch('http://localhost:3000/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,12 +34,12 @@ const Login = () => {
         const responseData = await response.json()
         console.log('Response from server:', responseData)
 
-        // Redirect to the home page upon successful login
+        // Redirect to the home page upon successful registration
         navigate('/') // Navigate to the home page
       } else {
         console.error('Server error:', response.status)
-        // Handle error from the server (authentication failure, etc.)
-        alert('Login failed. Please check your credentials and try again.')
+        // Handle server error, you could display an error message to the user
+        alert('Registration failed. Please try again.')
       }
 
       reset()
@@ -52,12 +52,28 @@ const Login = () => {
 
   return (
     <FormContainer
-      heading="Glad to See You Safe"
-      actionText="Don't have an account?"
-      actionLink="/register"
-      actionLinkText="Register"
+      heading="Create Your Account"
+      actionText="Already have an account?"
+      actionLink="/login"
+      actionLinkText="Login"
     >
       <form onSubmit={handleSubmit(onSubmit)}>
+        <InputField
+          label="Username"
+          type="text"
+          placeholder="Enter your username"
+          id="username"
+          register={register}
+          validation={{
+            required: 'Username is required',
+            minLength: {
+              value: 3,
+              message: 'Username must be at least 3 characters',
+            },
+          }}
+          errorMessage={errors.username?.message}
+        />
+
         <InputField
           label="Email"
           type="email"
@@ -67,7 +83,7 @@ const Login = () => {
           validation={{
             required: 'Email is required',
             pattern: {
-              value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
+              value: /^[a-zA-Z0-9._-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,6}$/,
               message: 'Please enter a valid email address',
             },
           }}
@@ -101,7 +117,6 @@ const Login = () => {
           errorMessage={errors.password?.message}
         />
 
-        {/* Confirm Password Input */}
         <InputField
           label="Confirm Password"
           type="password"
@@ -118,10 +133,10 @@ const Login = () => {
           errorMessage={errors.confirmPassword?.message}
         />
 
-        <SubmitButton text="Login" />
+        <SubmitButton text="Register" />
       </form>
     </FormContainer>
   )
 }
 
-export default Login
+export default Register
