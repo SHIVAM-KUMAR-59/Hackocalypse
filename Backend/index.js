@@ -69,11 +69,13 @@ import authRoutes from './routes/authRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import articleRoutes from './routes/articleRoutes.js'
 import tradeRoutes from './routes/tradeRoutes.js'
+import adminRoutes from './routes/adminRoutes.js'
 
 app.use(authRoutes)
 app.use(productRoutes)
 app.use(articleRoutes)
 app.use(tradeRoutes)
+app.use(adminRoutes)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
