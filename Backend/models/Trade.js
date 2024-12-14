@@ -14,7 +14,7 @@ const Trade = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['pending', 'accepted', 'rejected', 'completed'],
+    enum: ['pending', 'accepted', 'rejected'],
     default: 'pending',
   },
   createdAt: { type: Date, default: Date.now },
