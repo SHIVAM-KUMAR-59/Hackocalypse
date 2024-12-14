@@ -5,14 +5,14 @@ import dotenv from 'dotenv'
 import authRoutes from './routes/authRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import articleRoutes from './routes/articleRoutes.js'
+import tradeRoutes from './routes/tradeRoutes.js'
 
 dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 3000
-const MONGODB_URI = process.env.MONGODB_URI // Ensure this is set in your .env file
+const MONGODB_URI = process.env.MONGODB_URI
 
-// Middleware
 app.use(cors())
 app.use(express.json())
 
@@ -29,7 +29,7 @@ app.use(express.json())
     console.log('Successfully Connected to Database')
   } catch (error) {
     console.error('Error Connecting to Database:', error)
-    process.exit(1) // Exit the process if connection fails
+    process.exit(1)
   }
 })()
 
@@ -37,12 +37,12 @@ app.use(express.json())
 app.use(authRoutes)
 app.use(productRoutes)
 app.use(articleRoutes)
+app.use(tradeRoutes)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-// Start Server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
 })
