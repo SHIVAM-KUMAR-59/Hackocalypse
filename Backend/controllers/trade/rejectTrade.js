@@ -1,7 +1,7 @@
 import Trade from '../../models/Trade.js'
 import Product from '../../models/Product.js'
 
-const acceptTrade = async (req, res) => {
+const rejectTrade = async (req, res) => {
   const tradeId = req.params.tradeId
 
   if (!tradeId) {
@@ -18,7 +18,7 @@ const acceptTrade = async (req, res) => {
     if (trade.status !== 'pending') {
       return res
         .status(400)
-        .json({ message: 'Trade cannot be accepted at this stage' })
+        .json({ message: 'Trade cannot be rejected at this stage' })
     }
 
     const requestedProduct = await Product.findById(
@@ -33,24 +33,19 @@ const acceptTrade = async (req, res) => {
     if (!requestedProduct.owner._id.equals(req.user._id)) {
       return res
         .status(403)
-        .json({ message: 'You are not authorized to accept this trade' })
+        .json({ message: 'You are not authorized to reject this trade' })
     }
 
-    // Delete the products involved in the trade
-    await Product.deleteMany({
-      _id: { $in: [trade.offeredProduct._id, trade.requestedProduct._id] },
-    })
-
-    trade.status = 'accepted'
+    trade.status = 'rejected'
     await trade.save()
 
-    res.status(200).json({ message: 'Trade accepted successfully', trade })
+    res.status(200).json({ message: 'Trade rejected successfully', trade })
   } catch (error) {
     console.error(error)
     res
       .status(500)
-      .json({ message: 'Error accepting trade', error: error.message })
+      .json({ message: 'Error rejecting trade', error: error.message })
   }
 }
 
-export default acceptTrade
+export default rejectTrade
