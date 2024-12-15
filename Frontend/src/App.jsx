@@ -5,7 +5,6 @@ import Register from './component/Login/Register'
 import TradeHub from './component/TradeHub/TradeHub'
 import Article from './component/Article/Article'
 import MyTrade from './component/MyTrades/MyTrade'
-import MyProduct from './component/MyProducts/MyProduct'
 import MyArticles from './component/MyArticles/MyArticles'
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <Route path="/trade-hub" element={<TradeHub />} />
         <Route path="/article/:id" element={<Article />} />
         <Route path="my-trades" element={<MyTrade />} />
-        <Route path="my-products" element={<MyProduct />} />
         <Route path="my-articles" element={<MyArticles />} />
       </Routes>
     </Router>
