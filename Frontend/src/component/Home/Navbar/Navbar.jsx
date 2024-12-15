@@ -54,9 +54,9 @@ const Navbar = () => {
           <div className="nav-logo">LOGO</div>
           <div className="nav-item">
             <Button text="Chat" targetId="chat" />
-            <Button text="Articles" targetId="articles" />
-            <Button text="Trade" targetId="trade" />
-            {/* Show Announcements button if user role is admin */}
+            <Button text="Articles" targetId="home" />
+            <Button text="Trade" targetId="trade-hub" />
+
             {user?.role === 'admin' && (
               <Button text="Announcements" targetId="announcements" />
             )}
