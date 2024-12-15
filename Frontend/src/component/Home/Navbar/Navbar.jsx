@@ -74,9 +74,6 @@ const Navbar = () => {
                     <button onClick={() => navigate('/my-trades')}>
                       My Trades
                     </button>
-                    <button onClick={() => navigate('/my-products')}>
-                      My Products
-                    </button>
                     <button onClick={() => navigate('/my-articles')}>
                       My Articles
                     </button>

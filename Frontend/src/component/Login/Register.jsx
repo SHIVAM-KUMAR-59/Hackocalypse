@@ -62,7 +62,7 @@ const Register = () => {
 
   return (
     <FormContainer
-      heading="Together We'll Get Through This"
+      heading="Together, We'll Get Through This"
       actionText="Already have an account?"
       actionLink="/login"
       actionLinkText="Login"
