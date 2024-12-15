@@ -53,7 +53,7 @@ const Navbar = () => {
         <nav className="navbar">
           <div className="nav-logo">LOGO</div>
           <div className="nav-item">
-            <Button text="Chat" targetId="chat" />
+            <Button text="Chat" targetId="home" />
             <Button text="Articles" targetId="home" />
             <Button text="Trade" targetId="trade-hub" />
 
