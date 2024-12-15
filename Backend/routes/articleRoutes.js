@@ -9,7 +9,7 @@ const router = Router()
 
 router.post('/api/article/create', auth, createArticle)
 router.get('/api/article/all', getAllArticle)
-router.get('/api/article/:title', getArticleByName)
-router.delete('/api/article/:title', auth, deleteArticle)
+router.get('/api/article/:id', getArticleByName)
+router.delete('/api/article/:id', auth, deleteArticle)
 
 export default router
